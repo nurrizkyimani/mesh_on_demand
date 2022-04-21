@@ -1,7 +1,7 @@
 # Recreating Mesh 
 
 # W2
-1. Create the github repo
+ 1. Create the github repo
 
 # W3
  1. Store a dataset
@@ -10,25 +10,23 @@
  3. Preprocessing;
 
 # W4 
-
-1. Data preprocessing 
+ 1. Data preprocessing
 
 # W5
 
-1. Exploratory data analysis; Visualizatin
-2. Creating the regression Model 
+ 1. Exploratory data analysis; Visualizatin
+ 2. Creating the regression Model 
 
 # W6
-
-1. Creating the regression model; playing with parameter;
+ 1. Creating the regression model; playing with parameter;
 
 # W7
-
-2. Creating the LSTM Model; playing with parameter;
+ 1. Creating the regression model
+ 2. Creating the LSTM Model; playing with parameter;
 
 # W8
-
-1. Creating the clustering using KKN method; It works; 
+ 1. Creating the LSTM Model; playing with parameter;
+ 2. Creating the clustering using KKN method; It works; 
 
 
 
