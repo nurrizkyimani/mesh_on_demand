@@ -28,5 +28,8 @@
  1. Creating the LSTM Model; playing with parameter;
  2. Creating the clustering using KKN method; It works; 
 
+# W9
+
+ 1. Add evaluation metrics using shilouette score 
 
 
