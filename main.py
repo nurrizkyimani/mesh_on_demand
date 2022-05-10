@@ -1,10 +1,10 @@
 
 import pandas as pd
 import streamlit as st
-from tensorflow import keras
-
 from keras import models
-
+from keras.preprocessing.text import Tokenizer
+from keras.preprocessing.sequence import pad_sequences
+import numpy as np
 #
 def main():
     MODEL_PATH = 'model/saved_model.pb'
@@ -18,6 +18,27 @@ def main():
 
 
     keras_model = models.load_model('model')
+
+    # The maximum number of words to be used. (most frequent)
+    MAX_NB_WORDS = 30000
+    # Max number of words in each abstract.
+    MAX_SEQUENCE_LENGTH = 250
+    # This is fixed.
+    EMBEDDING_DIM = 300
+
+    tokenizer = Tokenizer(num_words=MAX_NB_WORDS, filters='!"#$%&()*+,-./:;<=>?@[\]^_`{|}~', lower=True)
+
+    X_one = []
+    X_one.append(
+        "Type headache moreover people type headache time treatment basis diagnosis technically term content diagnostic process base classification disorder beta produce classification base distinction headache application uniform concept come treatment type headache")
+    X_one_only = np.array(X_one)
+    X_one_only = tokenizer.texts_to_sequences(X_one_only)
+    X_one_only = pad_sequences(X_one_only, maxlen=MAX_SEQUENCE_LENGTH)
+
+    preds = keras_model.predict(X_one_only)
+
+    tags = pd.get_dummies(pd.Series(y).apply(pd.Series).stack()).sum(level=0)
+    tags.columns.values
 
 
 
