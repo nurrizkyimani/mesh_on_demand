@@ -8,27 +8,25 @@ import numpy as np
 import time
 
 def main():
+    # Initialize the model by load, and define the important variable
     MODEL_PATH = 'model/saved_model.pb'
-
-    st.title("Mesh on Demand")
-
-
-    st.caption("MeSH on Demand returns a list of MeSH Terms relevant to your text. Use it to discover MeSH terms for an author’s manuscript to find similar papers, or load abstracts from citations that are “Pubmed – In Process” or “Pubmed – As supplied by publisher” to get a feel for MeSH that may be assigned.")
-    st.caption(" ")
-    st.caption("Medical Subject Headings (MeSH) is a comprehensive controlled vocabulary for the purpose of indexing journal articles and books in the life sciences. It serves as a thesaurus that facilitates searching. Created and updated by the United States National Library of Medicine (NLM)")
-
-
+    # load keras model from the saved model
     keras_model = models.load_model('model')
-
     # The maximum number of words to be used. (most frequent)
     MAX_NB_WORDS = 30000
     # Max number of words in each abstract.
     MAX_SEQUENCE_LENGTH = 250
-    # This is fixed.
-    EMBEDDING_DIM = 300
-
+    # Tokenizer for tokenize the submission word
     tokenizer = Tokenizer(num_words=MAX_NB_WORDS, filters='!"#$%&()*+,-./:;<=>?@[\]^_`{|}~', lower=True)
 
+
+    # streamlit title and caption before form submission
+    st.title("Mesh on Demand")
+    st.caption("MeSH on Demand returns a list of MeSH Terms relevant to your text. Use it to discover MeSH terms for an author’s manuscript to find similar papers, or load abstracts from citations that are “Pubmed – In Process” or “Pubmed – As supplied by publisher” to get a feel for MeSH that may be assigned.")
+    st.caption(" ")
+    st.caption("Medical Subject Headings (MeSH) is a comprehensive controlled vocabulary for the purpose of indexing journal articles and books in the life sciences. It serves as a thesaurus that facilitates searching. Created and updated by the United States National Library of Medicine (NLM)")
+
+    # creating form input submission using streamlit
     form_input = st.form(key="form_input")
     select_text_input = form_input.selectbox("Example of the texts:",(
                                 "Type headache moreover people type headache time treatment basis diagnosis technically term content diagnostic process base classification disorder beta produce classification base distinction headache application uniform concept come treatment type headache",
@@ -36,6 +34,7 @@ def main():
                                 )
     submit_button = form_input.form_submit_button("Submit")
 
+    # executing the ml model if submit button is TRUE
     if submit_button:
         with st.spinner("Success for submission, let the robot process i!"):
             X_one = []
@@ -49,9 +48,7 @@ def main():
             y = np.load('y_file.npy', allow_pickle=True)
             tags = pd.get_dummies(pd.Series(y).apply(pd.Series).stack()).sum(level=0)
 
-            # tags.columns.values
             threshold = 0.1
-            idx = np.where(preds[0] > threshold)[0]
             tag_names = tags.columns.values
             tag_final = tag_names[preds[0] > threshold]
 

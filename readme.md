@@ -1,4 +1,6 @@
-# Recreating Mesh 
+# Mesh On Demand Recreation
+
+This is the 
 
 # W2
  1. Create the github repo
@@ -32,7 +34,9 @@
 
  1. Add evaluation metrics using shilouette score 
 
-# W10- W11
+# W10
  1. Add save file and website development using streamlit
 
+# W11
+ 1.  Add website using streamlit with python
 
