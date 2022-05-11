@@ -5,7 +5,6 @@ from keras import models
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 import numpy as np
-import time
 
 def main():
     # Initialize the model by load, and define the important variable
@@ -18,7 +17,6 @@ def main():
     MAX_SEQUENCE_LENGTH = 250
     # Tokenizer for tokenize the submission word
     tokenizer = Tokenizer(num_words=MAX_NB_WORDS, filters='!"#$%&()*+,-./:;<=>?@[\]^_`{|}~', lower=True)
-
 
     # streamlit title and caption before form submission
     st.title("Mesh on Demand")

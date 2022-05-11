@@ -1,6 +1,8 @@
 # Mesh On Demand Recreation
 
-This is the 
+<img src="others/main_img.jpg" width="500">
+
+This is the the repository of mesh on demand recreation using LSTM model. MeSH on Demand returns a list of MeSH Terms relevant to your text. Use it to discover MeSH terms for an author’s manuscript to find similar papers, or load abstracts from citations that are “Pubmed – In Process” or “Pubmed – As supplied by publisher” to get a feel for MeSH that may be assigned.
 
 # W2
  1. Create the github repo
