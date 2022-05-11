@@ -19,7 +19,6 @@ def main():
     # Tokenizer for tokenize the submission word
     tokenizer = Tokenizer(num_words=MAX_NB_WORDS, filters='!"#$%&()*+,-./:;<=>?@[\]^_`{|}~', lower=True)
 
-
     # streamlit title and caption before form submission
     st.title("Mesh on Demand")
     st.caption("MeSH on Demand returns a list of MeSH Terms relevant to your text. Use it to discover MeSH terms for an author’s manuscript to find similar papers, or load abstracts from citations that are “Pubmed – In Process” or “Pubmed – As supplied by publisher” to get a feel for MeSH that may be assigned.")
