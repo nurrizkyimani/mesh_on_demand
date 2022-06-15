@@ -42,3 +42,7 @@ This is the the repository of mesh on demand recreation using LSTM model. MeSH o
 # W11
  1.  Add website using streamlit with python
 
+
+# W16 - UAS 
+UAS ANSWER IN THE END
+https://github.com/nurrizkyimani/mesh_on_demand/blob/master/Data_Mining_Nurrizky.ipynb
