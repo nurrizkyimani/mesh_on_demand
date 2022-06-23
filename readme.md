@@ -42,6 +42,12 @@ This is the the repository of mesh on demand recreation using LSTM model. MeSH o
 # W11
  1.  Add website using streamlit with python
 
+# W12 
+ 1.  Add frequent itemset 
+
+# W13
+ 1.  Add association Rule 
+
 
 # W16 - UAS 
 UAS ANSWER IN THE END
