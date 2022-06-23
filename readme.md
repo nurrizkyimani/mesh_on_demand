@@ -36,10 +36,10 @@ This is the the repository of mesh on demand recreation using LSTM model. MeSH o
 
  1. Add evaluation metrics using shilouette score 
 
-# W10
+# W10 - Develop Website
  1. Add save file and website development using streamlit
 
-# W11
+# W11 - Develop Website
  1.  Add website using streamlit with python
 
 # W12 - Frequent Itemset
